@@ -4,7 +4,8 @@ Alex Kibler / Oct 5, 2017
 
 ## What is Test Your Might?
 
-(Brief description of the game, why you're choosing to make it)
+- Test your might is a recreation of the mini-game from the original Mortal Kombat, released in 1992 by Midway. For kids growing up with a Sega Genesis in their home, this mini-game was a button-masher's paradise.
+- To see the original mini-game in action, see [This Clip on YouTube.](https://youtu.be/RiwMEI2wNxQ?t=3m17s)
 
 ## Wireframe
 
