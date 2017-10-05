@@ -15,11 +15,41 @@ Alex Kibler / Oct 5, 2017
 
 ## Initial thoughts on game structure
 
-(Write out what challenges you expect to encounter, or ideas you want to come up with)
+- The game will consist of a visual representation of each player's power bar, and a visual representation of success or failure for each individual level. There will be five levels in total, with the bar to reach going up every round. The game will be incremental, with the "line to beat" increasing with every level, with the final levels being very difficult.
+
+- At the end of each round, I'll need a way to measure how much of the bar was filled, and assign points based on that distance. This score will need to be additive, and persist from level to level. If the player passes the bar, I will need to provide visual feedback, and if the player does not, I'll will need to do the same. Regardless, points will be awarded. The player with the most points at the end of round 5 is the winner.
+
+- From the user's perspective, Player One will use the A,Z, and X keys to control the bar, and Player Two will use >,/, and '. The instructions will have to be clearly visible, perhaps on a landing page? Button mashing reigns supreme, as the A and Z keys are rapidly pressed. The X key (for Player One) freezes their effort in time. They are then awarded with "breaking the wood" and a point total on screen.
+
+- Should the game mechanics come easier than anticipated, I will add additional visual stylings, eventually hoping to recreate the visuals of the original, except with Taka and John Master as the contestants. I will need to take photographs for this.
 
 ## Phases of Completion
 
-(The steps or phases you expect to go through, and the tasks that you'll need to accomplish to reach each step. These should resemble the acceptance criteria we were working through earlier.)
+#### Phase -3
+
+- Get bar gravity working
+- Player can control bar by button mashing
+
+#### Phase -2
+
+- Bar gravity can be frozen in place by pressing additional key.
+- Fullness of bar is measured.
+- Score is calculated based on how the full the bar is.
+
+#### Phase -1
+
+- Score is stored til next round
+- Line to make is increased every level.
+
+#### Phase 0
+
+- Instructions screen
+- Visual styling
+- Players scores after five levels are compared
+
+#### Phase 1
+
+- Taka and John Master added as sprites
 
 ## Links and Resources
 
