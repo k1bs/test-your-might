@@ -1,0 +1,20 @@
+
+body {
+  background-color: grey;
+}
+
+.bar {
+  width: 100px;
+  height: 0px;
+  background-color: yellow;
+}
+
+#game-field {
+  height: 448px;
+  width: 640px;
+  border: 5px solid red;
+  /*background-color: black;*/
+  margin: 100px auto;
+  box-shadow: 10px 10px 20px black;
+  background-image: url('../images/arena.jpg');
+}
