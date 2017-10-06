@@ -22,3 +22,10 @@ function Player(Number) {
     return this.score += score;
   }
 }
+
+function EmptyBar(level) {
+  this.level = level;
+  this.barHeight = function () {
+    // Math for bar height by level. (look up ease functions?)
+  }
+}
