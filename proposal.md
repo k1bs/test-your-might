@@ -30,13 +30,13 @@ Alex Kibler / Oct 5, 2017
 
 - From the user's perspective, Player One will use the A,Z, and X keys to control the bar, and Player Two will use >,/, and '. The instructions will have to be clearly visible, perhaps on a landing page? Button mashing reigns supreme, as the A and Z keys are rapidly pressed. The X key (for Player One) freezes their effort in time. They are then awarded with "breaking the wood" and a point total on screen.
 
-- Should the game mechanics come easier than anticipated, I will add additional visual stylings, eventually hoping to recreate the visuals of the original, except with Taka and John Master as the contestants. I will need to take photographs for this.
+- Should the game mechanics come faster than anticipated, I will add additional visual stylings, eventually hoping to recreate the visuals of the original, except with Taka and John Master as the contestants. I will need to take photographs for this.
 
 ## Phases of Completion
 
 #### Phase -3
 
-- Get bar gravity working
+- ~~Get bar gravity working~~ Achieved 10/6/17
 - Player can control bar by button mashing
 
 #### Phase -2
