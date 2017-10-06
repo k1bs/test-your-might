@@ -2,7 +2,7 @@ Alex Kibler / Oct 6, 2017
 
 # Test Your Might Proposal
 
-![Test Your Might Original](assets/testoriginal.png)
+![Test Your Might Original](testoriginal.png)
 
 ## What is Test Your Might?
 
@@ -11,8 +11,8 @@ Alex Kibler / Oct 6, 2017
 
 ## Wireframe
 
-![Wireframe 1](assets/wireframe1.png)
-![Wireframe 2](assets/wireframe2.png)
+![Wireframe 1](wireframe1.png)
+![Wireframe 2](../assets/wireframe2.png)
 
 | Element | Aspects |
 | --- | --- |
