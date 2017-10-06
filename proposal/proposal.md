@@ -1,4 +1,4 @@
-Alex Kibler / Oct 5, 2017
+Alex Kibler / Oct 6, 2017
 
 # Test Your Might Proposal
 
@@ -34,6 +34,8 @@ Alex Kibler / Oct 5, 2017
 
 ## Phases of Completion
 
+
+
 #### Phase -3
 
 - ~~Get bar gravity working~~ Achieved 10/6/17
@@ -44,11 +46,14 @@ Alex Kibler / Oct 5, 2017
 - Bar gravity can be frozen in place by pressing additional key.
 - Fullness of bar is measured.
 - Score is calculated based on how the full the bar is.
+- Implement Player constructor function.
 
 #### Phase -1
 
-- Score is stored til next round
+- Generate new level.
+- Score is stored til next round.
 - Line to make is increased every level.
+- Visual interaction if line is reached. (breaking the board)
 
 #### Phase 0
 
@@ -59,8 +64,19 @@ Alex Kibler / Oct 5, 2017
 #### Phase 1
 
 - Taka and John Master added as sprites
+- High scores table
+
+#### Phase 2
+
+- Username retrieves high score tables
+- Character select
 
 ## Links and Resources
 
 https://www.w3schools.com/code/tryit.asp?filename=FK9ZSNL6QET7
 - This is a code snippet I did to begin playing with the bar responding to your tapping.
+
+https://www.w3schools.com/howto/howto_js_countdown.asp
+- This is an article about making countdown timers.
+
+
