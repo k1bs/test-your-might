@@ -11,7 +11,15 @@ Alex Kibler / Oct 5, 2017
 
 ## Wireframe
 
-(Your wireframes go here. Preferably two or more)
+
+
+| Element | Aspects |
+| --- | --- |
+| Base | Browser window, game field div |
+| Player input | Power bar, filled by repeatedly pressing keyboard keys |
+| Game output (interactable) | *Filled power bar* ( different levels have different lines to reach on the bar); *breakable object* (object breaks in half if line-to-meet is made); *winner score* (both players scores totaled and compared) |
+| Game output (static) | Room description; result of input field; list of objects in room |
+
 
 ## Initial thoughts on game structure
 
