@@ -39,7 +39,7 @@ Alex Kibler / Oct 6, 2017
 #### Phase -3
 
 - ~~Get bar gravity working~~ Achieved 10/6/17
-- Player can control bar by button mashing
+- ~~Player can control bar by button mashing~~ Achieved 10/6/17
 
 #### Phase -2
 
