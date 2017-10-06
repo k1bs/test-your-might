@@ -62,5 +62,5 @@ Alex Kibler / Oct 5, 2017
 
 ## Links and Resources
 
-https://www.w3schools.com/code/tryit.asp?filename=FK9MAB2UF2KQ
+https://www.w3schools.com/code/tryit.asp?filename=FK9ZSNL6QET7
 - This is a code snippet I did to begin playing with the bar responding to your tapping.
