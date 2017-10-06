@@ -11,8 +11,8 @@ Alex Kibler / Oct 5, 2017
 
 ## Wireframe
 
-![Wireframe 1](assets/wireframe1.jpg)
-![Wireframe 2](assets/wireframe2.jpg)
+![Wireframe 1](assets/wireframe1.png)
+![Wireframe 2](assets/wireframe2.png)
 
 | Element | Aspects |
 | --- | --- |
