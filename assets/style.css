@@ -1,35 +1,76 @@
 
 body {
   background-color: grey;
+  font-family: 'MK 1', sans-serif;
+  font-size: 20px;
+  color: white;
 }
 
 h1 {
-  font-family: 'MK 1', sans-serif;
   font-size: 35pt;
   color: yellow;
   text-shadow: 4px 4px darkred;
-  /*display: inline-block;*/
-  text-align: center;
   margin: 30px auto;
 }
 
-.bar {
-  width: 60px;
-  height: 250px;
-  background-color: yellow;
-  max-height: 250px;
-  margin: 20px 60px;
+h1, h3, h4 {
+  text-align: center;
 }
 
-#bar-player-1 {
+.bar {
+  width: 36px;
+  height: 246px;
+  background-color: yellow;
+  max-height: 246px;
+  margin: 2px;
+  /*margin: -80px 20px;*/
+}
+
+.outer-bar {
+  border: 2px solid white;
+  width: 40px;
+  height: 250px;
+  max-height: 250px;
+  margin: -80px 20px;
+}
+
+.hero-box {
+  border: 5px solid pink;
+  margin: -30px 55px;
+  width: 200px;
+}
+
+.sprite {
+  width: 100px;
+  height: 150px;
+  background-color: blue;
+  margin: 0 auto;
+}
+
+.material {
+  width: 100px;
+  height: 40px;
+  background-color: green;
+  margin: 0 auto;
+}
+
+#outer-player-1{
   float: left;
 }
 
-#bar-player-2 {
+#outer-player-1{
   float: right;
 }
 
-#main-field {
+#hero-player-1 {
+  float: left;
+}
+
+#hero-player-2 {
+  float: right;
+}
+
+#main-text-field {
 }
 
 #game-field {
