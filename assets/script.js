@@ -1,7 +1,3 @@
-const gameState = {
-  level: null,
-}
-
 let p1 = new Player(1);
 let p2 = new Player(2);
 
@@ -37,6 +33,15 @@ function keyStart () {
       console.log(p2.score);
     }
   })
+}
+
+// Game Constructor function
+
+function GameState() {
+  this.level = null;
+  this.next = function() {
+    // Add code to change level, reload page?
+  }
 }
 
 
