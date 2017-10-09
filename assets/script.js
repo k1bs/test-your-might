@@ -3,9 +3,10 @@ let p2 = new Player(2);
 let game = new GameState();
 
 $(function(){
-  keyStart();
-  console.log(game)
+  setMat();
   setBar();
+  setText();
+  keyStart();
 })
 
 
@@ -48,6 +49,8 @@ function checkLine (player) {
   }
 }
 
+// Game init
+
 // Board breaker function
 
 function boardBreaker(player) {
@@ -56,7 +59,27 @@ function boardBreaker(player) {
   $(board).css('background-image', broken);
 }
 
+// Text setter function
+
+function setText() {
+  let header = $('h3');
+  header.each(function(){
+    $(this).text(game.matName());
+  })
+}
+
+// Mat field setter function
+
+function setMat() {
+  let container = $('.material');
+  let mat = `url(./images/${game.level}whole.png`;
+  container.each(function() {
+    $(this).css('background-image', mat);
+  });
+}
+
 // Bar setter function
+
 function setBar() {
   let toGain = $('.to-gain-bar');
   let excess = $('.excess-bar');
@@ -71,12 +94,16 @@ function setBar() {
 // Game Constructor function
 
 function GameState() {
-  this.level = 5;
+  this.level = 1;
   this.height = function() {
-    return Math.floor(235 - (123 / (this.level)));
+    return Math.floor(250 - (123 / (this.level)));
   }
   this.next = function() {
     // Add code to change level, reload page?
+  }
+  this.matName = function() {
+    let mats = ['wood','stone','steel','ruby','diamond'];
+    return mats[(this.level) - 1];
   }
 }
 
