@@ -6,32 +6,31 @@ $(function(){
   setMat();
   setBar();
   setText();
-  keyStart();
+  keyStartOne();
+  keyStartTwo();
 })
 
 
 
 // Keylogger function
 
-function keyStart () {
+function keyStartOne () {
+  $(window).on('keydown.one', window, handlerOne);
   $(window).keydown(function(e) {
-    console.log(e.which);
-    if (e.which === 65 || e.which === 90) {
-      $('#bar-player-1').stop(true, false);
-      $('#bar-player-1').height('+=50');
-      $('#bar-player-1').animate({height: 0}, 200);
-    }
-    if (e.which === 190 || e.which === 191) {
-      $('#bar-player-2').stop(true, false);
-      $('#bar-player-2').height('+=50');
-      $('#bar-player-2').animate({height: 0}, 200);
-    }
     if (e.which === 88) {
+      $(window).off('keydown.one');
       $('#bar-player-1').stop();
       p1.addScore($('#bar-player-1').height());
       checkLine(p1);
     }
+  })
+}
+
+function keyStartTwo () {
+  $(window).on('keydown.two', window, handlerTwo);
+  $(window).keydown(function(e) {
     if (e.which === 222) {
+      $(window).off('keydown.two')
       $('#bar-player-2').stop();
       p2.addScore($('#bar-player-2').height());
       checkLine(p2);
@@ -46,6 +45,26 @@ function checkLine (player) {
   let bar = `#bar-player-${player.number}`;
   if ($(bar).height() > line) {
     boardBreaker(player);
+  }
+}
+
+// Keyhandler Player One
+
+function handlerOne(event) {
+  if (event.which === 65 || event.which === 90) {
+      $('#bar-player-1').stop(true, false);
+      $('#bar-player-1').height('+=50');
+      $('#bar-player-1').animate({height: 0}, 200);
+  }
+}
+
+// Keyhandler Player Two
+
+function handlerTwo(event) {
+  if (event.which === 190 || event.which === 191) {
+      $('#bar-player-2').stop(true, false);
+      $('#bar-player-2').height('+=50');
+      $('#bar-player-2').animate({height: 0}, 200);
   }
 }
 

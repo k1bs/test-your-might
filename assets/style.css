@@ -58,14 +58,14 @@ h3, h4 {
   width: 40px;
   height: 200px;
   margin: 2px 2px 0 2px;
-  border-bottom: 1px solid red;
+  border-bottom: 0px;
 }
 
 .excess-bar {
   width: 40px;
   height: 46px;
   margin: 0 2px 2px 2px;
-  border-top: 1px solid red;
+  border-top: 2px solid red;
 }
 
 .hero-box {
