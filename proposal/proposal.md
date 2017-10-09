@@ -50,10 +50,10 @@ Alex Kibler / Oct 6, 2017
 
 #### Phase -1
 
-- Visual interaction if line is reached. (breaking the board)
+- ~~Visual interaction if line is reached. (breaking the board)~~ Achieved 10/8/2017
+- ~~Line to make is increased every level.~~ Achieved 10/8/2017
 - Score is stored til next round.
 - Generate new level.
-- Line to make is increased every level.
 
 #### Phase 0
 
