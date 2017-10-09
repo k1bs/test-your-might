@@ -27,7 +27,7 @@ function keyStart () {
     if (e.which === 88) {
       $('#bar-player-1').stop();
       p1.addScore($('#bar-player-1').height());
-      boardBreaker(p1);
+      checkLine(p1);
     }
     if (e.which === 222) {
       $('#bar-player-2').stop();
@@ -35,6 +35,16 @@ function keyStart () {
       console.log(p2.score);
     }
   })
+}
+
+// Line checker function
+
+function checkLine (player) {
+  let line = game.height();
+  let bar = `#bar-player-${player.number}`;
+  if ($(bar).height() > line) {
+    boardBreaker(player);
+  }
 }
 
 // Board breaker function
@@ -49,6 +59,9 @@ function boardBreaker(player) {
 
 function GameState() {
   this.level = 1;
+  this.height = function() {
+    return Math.floor(246 - (123 / this.level));
+  }
   this.next = function() {
     // Add code to change level, reload page?
   }
