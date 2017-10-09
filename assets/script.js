@@ -6,16 +6,16 @@ $(function(){
   setMat();
   setBar();
   setText();
-  keyStartOne();
-  keyStartTwo();
+  keyStart();
 })
 
 
 
 // Keylogger function
 
-function keyStartOne () {
+function keyStart () {
   $(window).on('keydown.one', window, handlerOne);
+  $(window).on('keydown.two', window, handlerTwo);
   $(window).keydown(function(e) {
     if (e.which === 88) {
       $(window).off('keydown.one');
@@ -24,10 +24,6 @@ function keyStartOne () {
       checkLine(p1);
     }
   })
-}
-
-function keyStartTwo () {
-  $(window).on('keydown.two', window, handlerTwo);
   $(window).keydown(function(e) {
     if (e.which === 222) {
       $(window).off('keydown.two')
