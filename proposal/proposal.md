@@ -43,17 +43,17 @@ Alex Kibler / Oct 6, 2017
 
 #### Phase -2
 
-- Bar gravity can be frozen in place by pressing additional key.
-- Fullness of bar is measured.
-- Score is calculated based on how the full the bar is.
-- Implement Player constructor function.
+- ~~Bar gravity can be frozen in place by pressing additional key.~~ Achieved 10/8/2017
+- ~~Fullness of bar is measured.~~ Achieved 10/8/2017
+- ~~Score is calculated based on how the full the bar is.~~ Achieved 10/8/2017
+- ~~Implement Player constructor function.~~ Achieved 10/8/2017
 
 #### Phase -1
 
-- Generate new level.
-- Score is stored til next round.
-- Line to make is increased every level.
 - Visual interaction if line is reached. (breaking the board)
+- Score is stored til next round.
+- Generate new level.
+- Line to make is increased every level.
 
 #### Phase 0
 
