@@ -75,7 +75,7 @@ h3, h4 {
 
 .sprite {
   width: 170px;
-  height: 230px;
+  height: 220px;
   /*background-color: blue;*/
   margin: 0 auto;
 }
@@ -84,8 +84,8 @@ h3, h4 {
   width: 200px;
   height: 100px;
   /*background-color: green;*/
-  background: url(../images/wood2.png) no-repeat top center;
-  background-size: contain;
+  background: url(../images/1whole.png) no-repeat top center;
+  background-size: 80%;
   margin: 0 auto;
 }
 

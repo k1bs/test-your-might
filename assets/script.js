@@ -1,8 +1,10 @@
 let p1 = new Player(1);
 let p2 = new Player(2);
+let game = new GameState();
 
 $(function(){
   keyStart();
+  console.log(game)
 })
 
 
@@ -25,7 +27,7 @@ function keyStart () {
     if (e.which === 88) {
       $('#bar-player-1').stop();
       p1.addScore($('#bar-player-1').height());
-      console.log(p1.score);
+      boardBreaker(p1);
     }
     if (e.which === 222) {
       $('#bar-player-2').stop();
@@ -35,10 +37,18 @@ function keyStart () {
   })
 }
 
+// Board breaker function
+
+function boardBreaker(player) {
+  let board = `#mat-player-${player.number}`;
+  let broken = `url(./images/${game.level}broken.png)`;
+  $(board).css('background-image', broken);
+}
+
 // Game Constructor function
 
 function GameState() {
-  this.level = null;
+  this.level = 1;
   this.next = function() {
     // Add code to change level, reload page?
   }
@@ -48,7 +58,7 @@ function GameState() {
 // Player Constructor function
 
 function Player(number) {
-  this.number = '#bar-player-' + number;
+  this.number = number;
   this.score = 0;
   this.addScore = function(score) {
     return this.score += score;
