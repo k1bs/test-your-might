@@ -5,6 +5,7 @@ let game = new GameState();
 $(function(){
   keyStart();
   console.log(game)
+  setBar();
 })
 
 
@@ -32,7 +33,7 @@ function keyStart () {
     if (e.which === 222) {
       $('#bar-player-2').stop();
       p2.addScore($('#bar-player-2').height());
-      console.log(p2.score);
+      checkLine(p2);
     }
   })
 }
@@ -55,12 +56,24 @@ function boardBreaker(player) {
   $(board).css('background-image', broken);
 }
 
+// Bar setter function
+function setBar() {
+  let toGain = $('.to-gain-bar');
+  let excess = $('.excess-bar');
+  toGain.each(function() {
+    $(this).height(game.height());
+  })
+  excess.each(function() {
+    $(this).height(246 - (game.height()));
+  })
+}
+
 // Game Constructor function
 
 function GameState() {
-  this.level = 1;
+  this.level = 5;
   this.height = function() {
-    return Math.floor(246 - (123 / this.level));
+    return Math.floor(235 - (123 / (this.level)));
   }
   this.next = function() {
     // Add code to change level, reload page?
@@ -86,5 +99,7 @@ function EmptyBar(level) {
     // Math for bar height by level. (look up ease functions?)
   }
 }
+
+
 
 
