@@ -3,10 +3,27 @@ let p2 = new Player(2);
 let game = new GameState(1);
 
 let currentLevel = parseInt(localStorage.getItem('level'));
-console.log(currentLevel);
+let p1Score = parseInt(localStorage.getItem('1-score'));
+let p2Score = parseInt(localStorage.getItem('2-score'));
+
 if (currentLevel) {
   game.level = currentLevel;
+} else {
+  game.score = 1;
 }
+
+if (p1Score) {
+  p1.score = p1Score;
+} else {
+  p1.score = 0;
+}
+
+if (p2Score) {
+  p2.score = p2Score;
+} else {
+  p2.score = 0;
+}
+
 
 
 $(function(){
@@ -15,7 +32,6 @@ $(function(){
   setText();
   keyStart();
   timer();
-  console.log(p1.score);
 })
 
 
@@ -31,6 +47,7 @@ function keyStart () {
       $('#bar-player-1').stop();
       p1.addScore($('#bar-player-1').height());
       checkLine(p1);
+      p1.storeScore();
     }
   })
   $(window).keydown(function(e) {
@@ -39,6 +56,7 @@ function keyStart () {
       $('#bar-player-2').stop();
       p2.addScore($('#bar-player-2').height());
       checkLine(p2);
+      p2.storeScore();
     }
   })
 }
@@ -132,6 +150,8 @@ function GameState(cachedLevel) {
     } else if (this.level === 5) {
       setTimeout(function () {
         localStorage.removeItem('level')
+        localStorage.removeItem('1-score')
+        localStorage.removeItem('2-score');
         window.location.reload(true);
       })
     }
@@ -145,12 +165,18 @@ function GameState(cachedLevel) {
 
 // Player Constructor function
 
-function Player(number) {
+function Player(number, score) {
   this.number = number;
-  this.score = 0;
-  this.addScore = function(score) {
-    return this.score += score;
-  };
+  this.score = score;
+}
+
+Player.prototype.storeScore = function() {
+  let holderName = `${this.number}-score`;
+  localStorage.setItem(holderName, this.score);
+};
+
+Player.prototype.addScore = function(newScore) {
+  this.score = Math.floor(this.score + newScore);
 }
 
 // EmptyBar Constructor function
