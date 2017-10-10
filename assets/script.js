@@ -91,7 +91,17 @@ function handlerTwo(event) {
   }
 }
 
-// Game init
+// Winner Check function
+
+function checkWin() {
+  if (p1.score > p2.score) {
+    $('h1').text('Player One Wins!')
+  } else if (p1.score < p2.score) {
+    $('h1').text('Player Two Wins!')
+  } else {
+    $('h1').text(`It's a draw!`)
+  }
+}
 
 // Board breaker function
 
@@ -148,16 +158,18 @@ function GameState(cachedLevel) {
         window.location.reload(true);
       }, 2000);
     } else if (this.level === 5) {
+      checkWin();
       setTimeout(function () {
         localStorage.removeItem('level')
         localStorage.removeItem('1-score')
         localStorage.removeItem('2-score');
         window.location.reload(true);
-      })
+      }, 4000)
     }
   }
   this.matName = function() {
     let mats = ['wood','stone','steel','ruby','diamond'];
+    let bonus = [40, 80, 120, 200, 300];
     return mats[(this.level) - 1];
   }
 }
@@ -197,6 +209,8 @@ function timer() {
     let newTime = currentTime - 1;
     if (currentTime === 0) {
       clearInterval(interval);
+      $(window).off('keydown.one')
+      $(window).off('keydown.two')
       game.next();
     } else {
       let newTime = currentTime - 1;
