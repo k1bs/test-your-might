@@ -1,12 +1,21 @@
 let p1 = new Player(1);
 let p2 = new Player(2);
-let game = new GameState();
+let game = new GameState(1);
+
+let currentLevel = parseInt(localStorage.getItem('level'));
+console.log(currentLevel);
+if (currentLevel) {
+  game.level = currentLevel;
+}
+
 
 $(function(){
   setMat();
   setBar();
   setText();
   keyStart();
+  timer();
+  console.log(p1.score);
 })
 
 
@@ -108,13 +117,24 @@ function setBar() {
 
 // Game Constructor function
 
-function GameState() {
-  this.level = 1;
+function GameState(cachedLevel) {
+  this.level = cachedLevel;
   this.height = function() {
     return Math.floor(250 - (123 / (this.level)));
   }
   this.next = function() {
-    // Add code to change level, reload page?
+    if (this.level !== 5) {
+      this.level++;
+      localStorage.setItem('level',this.level);
+      setTimeout(function() {
+        window.location.reload(true);
+      }, 2000);
+    } else if (this.level === 5) {
+      setTimeout(function () {
+        localStorage.removeItem('level')
+        window.location.reload(true);
+      })
+    }
   }
   this.matName = function() {
     let mats = ['wood','stone','steel','ruby','diamond'];
@@ -139,6 +159,23 @@ function EmptyBar(level) {
   this.level = level;
   this.barHeight = function () {
     // Math for bar height by level. (look up ease functions?)
+  }
+}
+
+// Timer decrement function
+
+function timer() {
+  let interval = setInterval(newText, 1000);
+  function newText() {
+    let currentTime = parseInt($('h1').html());
+    let newTime = currentTime - 1;
+    if (currentTime === 0) {
+      clearInterval(interval);
+      game.next();
+    } else {
+      let newTime = currentTime - 1;
+      $('h1').text(newTime);
+    }
   }
 }
 
