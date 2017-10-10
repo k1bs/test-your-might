@@ -60,6 +60,21 @@ function keyStart () {
       p2.storeScore();
     }
   })
+  $('#title-button').click(function() {
+    $('#shade').addClass('fade')
+    setTimeout(function(){
+      window.location.href = 'index.html';
+    }, 1500);
+  })
+  $('#reset-button').click(function() {
+    $('#shade').addClass('fade')
+    setTimeout(function(){
+      window.location.reload(true);
+      localStorage.removeItem('level');
+      localStorage.removeItem('1-score');
+      localStorage.removeItem('2-score');
+    }, 1500);
+  })
 }
 
 // Line checker function
@@ -188,13 +203,13 @@ function GameState(cachedLevel) {
         window.location.reload(true);
       }, 8500);
     } else if (this.level === 5) {
-      checkWin();
       setTimeout(function () {
-        localStorage.removeItem('level')
-        localStorage.removeItem('1-score')
-        localStorage.removeItem('2-score');
-        window.location.reload(true);
+        checkWin();
+        $('h1').addClass('h1-blink')
       }, 4000)
+      setTimeout(function () {
+        $('#victory').get(0).play();
+      }, 6000)
     }
   }
   this.matName = function() {

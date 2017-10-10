@@ -43,10 +43,26 @@ ul {
 
 li {
   margin: 10px;
+  color: red;
 }
 
 li:hover {
   animation: blink 0.1s steps(1) infinite alternate;
+  cursor: pointer;
+}
+
+button {
+  position: relative;
+  background-color: #515151;
+  font-family: 'MK 1', sans-serif;
+  font-size: 30px;
+  border-radius: 0px;
+  color: white;
+  border: 3px solid black;
+  box-shadow: 4px 4px 10px #515151;
+  top: 580px;
+  padding: 10px;
+  margin: 0 10px;
   cursor: pointer;
 }
 
@@ -126,6 +142,10 @@ li:hover {
 
 .h1-blink {
   animation: blink 0.1s steps(1) infinite alternate;
+}
+
+.button-container {
+  text-align: center;
 }
 
 #outer-player-1{
@@ -288,13 +308,13 @@ li:hover {
 
 @keyframes blink {
   0% {
-    color: red;
-  }
-  50% {
     color: white;
   }
-  100% {
+  50% {
     color: red;
+  }
+  100% {
+    color: white;
   }
 }
 
