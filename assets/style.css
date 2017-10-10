@@ -90,6 +90,28 @@ h3, h4 {
   margin: 0 auto;
 }
 
+.onebreathe {
+  animation: breatheOne 0.5s steps(1) infinite alternate;
+}
+
+.twobreathe {
+  animation: breatheTwo 0.4s steps(1) infinite alternate;
+}
+
+.onechop {
+  animation: chopOne 0.6s steps(1);
+  animation-fill-mode: forwards;
+}
+
+.twochop {
+  animation: chopTwo 0.6s steps(1);
+  animation-fill-mode: forwards;
+}
+
+.h1-blink {
+  animation: blink 0.1s steps(1) infinite alternate;
+}
+
 #outer-player-1{
   float: left;
 }
@@ -100,13 +122,13 @@ h3, h4 {
 
 #hero-player-1 {
   float: left;
-  background: url(../images/t04.gif) no-repeat top center;
+  background: url(../images/1breathe1.gif) no-repeat top center;
   background-size: 100%;
 }
 
 #hero-player-2 {
   float: right;
-  background: url(../images/t06.gif) no-repeat top center;
+  background: url(../images/2breathe1.gif) no-repeat top center;
   background-size: 100%;
 }
 
@@ -123,6 +145,21 @@ h3, h4 {
   background-image: url('../images/arena.jpg');
 }
 
+#shade {
+  position: relative;
+  margin: -553px auto;
+  height: 448px;
+  width: 640px;
+  background-color: black;
+  opacity: 0;
+  z-index: 10;
+}
+
+.fade {
+  animation: fadeblack 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
 @font-face {
   font-family: 'MK 1';
   src: url('../assets/mk1.ttf') format('truetype');
@@ -134,3 +171,100 @@ h3, h4 {
   display: table;
   clear: both;
 }
+
+@keyframes breatheOne {
+  0% {
+    background-image: url('../images/1breathe1.gif');
+  }
+  33% {
+    background-image: url('../images/1breathe2.gif');
+  }
+  66% {
+    background-image: url('../images/1breathe3.gif');
+  }
+  100% {
+    background-image: url('../images/1breathe3.gif');
+  }
+}
+
+@keyframes breatheTwo {
+  0% {
+    background-image: url('../images/2breathe1.gif');
+  }
+  33% {
+    background-image: url('../images/2breathe2.gif');
+  }
+  66% {
+    background-image: url('../images/2breathe3.gif');
+  }
+  100% {
+    background-image: url('../images/2breathe3.gif');
+  }
+}
+
+@keyframes chopOne {
+  0% {
+    background-image: url('../images/1chop1.gif');
+  }
+  90% {
+    background-image: url('../images/1chop2.gif');
+  }
+  100% {
+    background-image: url('../images/1chop3.gif');
+  }
+}
+
+@keyframes chopTwo {
+  0% {
+    background-image: url('../images/2chop1.gif');
+  }
+  90% {
+    background-image: url('../images/2chop2.gif');
+  }
+  100% {
+    background-image: url('../images/2chop3.gif');
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: white;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes fadeblack {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*Placeholders*/
+
+#placeholder1 { background: url(../images/1breathe1.gif) no-repeat -9999px -9999px }
+#placeholder2 { background: url(../images/1breathe2.gif) no-repeat -9999px -9999px }
+#placeholder3 { background: url(../images/1breathe3.gif) no-repeat -9999px -9999px }
+#placeholder4 { background: url(../images/1chop1.gif) no-repeat -9999px -9999px }
+#placeholder5 { background: url(../images/1chop2.gif) no-repeat -9999px -9999px }
+#placeholder6 { background: url(../images/1chop3.gif) no-repeat -9999px -9999px }
+#placeholder7 { background: url(../images/1win1.gif) no-repeat -9999px -9999px }
+#placeholder8 { background: url(../images/1win2.gif) no-repeat -9999px -9999px }
+#placeholder9 { background: url(../images/2breathe1.gif) no-repeat -9999px -9999px }
+#placeholder10 { background: url(../images/2breathe2.gif) no-repeat -9999px -9999px }
+#placeholder11 { background: url(../images/2breathe3.gif) no-repeat -9999px -9999px }
+#placeholder12 { background: url(../images/2chop1.gif) no-repeat -9999px -9999px }
+#placeholder13 { background: url(../images/2chop2.gif) no-repeat -9999px -9999px }
+#placeholder14 { background: url(../images/2chop3.gif) no-repeat -9999px -9999px }
+#placeholder15 { background: url(../images/2win1.gif) no-repeat -9999px -9999px }
+#placeholder16 { background: url(../images/2win2.gif) no-repeat -9999px -9999px }

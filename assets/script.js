@@ -1,6 +1,7 @@
 let p1 = new Player(1);
 let p2 = new Player(2);
 let game = new GameState(1);
+let strikeCount = 0;
 
 let currentLevel = parseInt(localStorage.getItem('level'));
 let p1Score = parseInt(localStorage.getItem('1-score'));
@@ -64,11 +65,29 @@ function keyStart () {
 // Line checker function
 
 function checkLine (player) {
+  strikeCount++;
   let line = game.height();
   let bar = `#bar-player-${player.number}`;
+  let box = `#hero-player-${player.number}`;
+  let animation = '';
+  if (player === p1){
+    animation = 'onechop'
+  } else {
+    animation = 'twochop'
+  }
+  $(box).removeClass('onebreathe twobreathe');
+  window.setTimeout(function() {
+    $('#punch').get(0).play();
+  },500);
+  $(box).addClass(animation);
   if ($(bar).height() > line) {
     boardBreaker(player);
   }
+  if (strikeCount === 2) {
+    window.clearInterval(interval);
+    game.next();
+  }
+
 }
 
 // Keyhandler Player One
@@ -77,7 +96,7 @@ function handlerOne(event) {
   if (event.which === 65 || event.which === 90) {
       $('#bar-player-1').stop(true, false);
       $('#bar-player-1').height('+=50');
-      $('#bar-player-1').animate({height: 0}, 200);
+      $('#bar-player-1').animate({height: 0}, 250);
   }
 }
 
@@ -87,7 +106,7 @@ function handlerTwo(event) {
   if (event.which === 190 || event.which === 191) {
       $('#bar-player-2').stop(true, false);
       $('#bar-player-2').height('+=50');
-      $('#bar-player-2').animate({height: 0}, 200);
+      $('#bar-player-2').animate({height: 0}, 250);
   }
 }
 
@@ -108,7 +127,10 @@ function checkWin() {
 function boardBreaker(player) {
   let board = `#mat-player-${player.number}`;
   let broken = `url(./images/${game.level}broken.png)`;
-  $(board).css('background-image', broken);
+  let timer = window.setTimeout(function() {
+    $(board).css('background-image', broken);
+    $('#crunch').get(0).play();
+  }, 600)
 }
 
 // Text setter function
@@ -154,9 +176,17 @@ function GameState(cachedLevel) {
     if (this.level !== 5) {
       this.level++;
       localStorage.setItem('level',this.level);
+      setTimeout(function(){
+        $('#begin').get(0).pause();
+        $('#end').prop('volume',0.5);
+        $('#end').get(0).play();
+      }, 2000)
+      setTimeout(function() {
+        $('#shade').addClass('fade');
+      },7000)
       setTimeout(function() {
         window.location.reload(true);
-      }, 2000);
+      }, 8500);
     } else if (this.level === 5) {
       checkWin();
       setTimeout(function () {
@@ -203,11 +233,15 @@ function EmptyBar(level) {
 // Timer decrement function
 
 function timer() {
-  let interval = setInterval(newText, 1000);
+  interval = setInterval(newText, 1000);
   function newText() {
     let currentTime = parseInt($('h1').html());
     let newTime = currentTime - 1;
+    if (currentTime === 5) {
+      $('h1').addClass('h1-blink')
+    }
     if (currentTime === 0) {
+      $('h1').removeClass('h1-blink')
       clearInterval(interval);
       $(window).off('keydown.one')
       $(window).off('keydown.two')
