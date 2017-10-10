@@ -67,6 +67,11 @@ button {
   cursor: pointer;
 }
 
+span {
+  color: red;
+  font-size: 24px;
+}
+
 .bar {
   width: 36px;
   height: 0px;
@@ -170,6 +175,31 @@ button {
 }
 
 #main-text-field {
+}
+
+#instruction-h3 {
+  padding: 30px;
+  font-size: 38px;
+}
+
+#inst-float-left {
+  float: left;
+  margin: 40px 20px 0px 80px;
+}
+
+#inst-float-right {
+  float: right;
+  margin: 40px 80px 0px 20px;
+}
+
+.instruction-p {
+  padding: 0 50px 20px 50px;
+  text-align: left;
+  line-height: 120%;
+}
+
+.inst-label {
+  margin-bottom: 15px;
 }
 
 #game-field {

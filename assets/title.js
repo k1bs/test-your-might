@@ -11,7 +11,7 @@ $(function (){
   })
   $('#instructions-link').click(function(){
     $('body').append('<div id="instruction" ></div>')
-    $('#instruction').html('<p>Test Paragraph</p>');
+    $('#instruction').html('<h3 id="instruction-h3">Instructions</h3><p class="instruction-p">Press your assigned strength keys as fast as you can!</p><p class="instruction-p">As your bar power fills, prepare to strike!</p><p class="instruction-p">Only a well timed strike will break what lies in front of you, unlocking extra points!</p><div id="inst-float-left"><h4 class="inst-label">player 1</h3><p style="text-align:left">Strength keys: <span>A</span> and <span>Z</span><br>Strike key: <span>X</span></p></div><div id="inst-float-right"><h4 class="inst-label">player 2</h4><p style="text-align:left">Strength keys: <span>.</span> and <span>?</span><br>Strike key: <span>"</span></p></div>');
   })
   $(window).keydown(function(e) {
     if (e.which === 27) {
