@@ -146,6 +146,16 @@ span {
   animation-fill-mode: forwards;
 }
 
+#onewin {
+  animation: winOne 0.6s steps(1);
+  animation-fill-mode: forwards;
+}
+
+#twowin {
+  animation: winTwo 0.6s steps(1);
+  animation-fill-mode: forwards;
+}
+
 .h1-blink {
   animation: blink 0.1s steps(1) infinite alternate;
 }
@@ -164,13 +174,13 @@ span {
 
 #hero-player-1 {
   float: left;
-  background: url(../images/1breathe1.gif) no-repeat top center;
+  background: url(../images/1win2.gif) no-repeat top center;
   background-size: 100%;
 }
 
 #hero-player-2 {
   float: right;
-  background: url(../images/2breathe1.gif) no-repeat top center;
+  background: url(../images/2win2.gif) no-repeat top center;
   background-size: 100%;
 }
 
@@ -376,6 +386,30 @@ span {
   }
   100% {
     transform: translateY(-448px);
+  }
+}
+
+@keyframes winOne {
+  0% {
+    background-image: url('../images/1win1.gif');
+  }
+  90% {
+    background-image: url('../images/1win1.gif');
+  }
+  100% {
+    background-image: url('../images/1win2.gif');
+  }
+}
+
+@keyframes winOne {
+  0% {
+    background-image: url('../images/2win1.gif');
+  }
+  90% {
+    background-image: url('../images/2win1.gif');
+  }
+  100% {
+    background-image: url('../images/2win2.gif');
   }
 }
 

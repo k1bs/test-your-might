@@ -46,7 +46,7 @@ function keyStart () {
     if (e.which === 88) {
       $(window).off('keydown.one');
       $('#bar-player-1').stop();
-      p1.addScore(($('#bar-player-1').height()) * 10);
+      p1.addScore(($('#bar-player-1').height()) * 100);
       checkLine(p1);
       p1.storeScore();
     }
@@ -55,7 +55,7 @@ function keyStart () {
     if (e.which === 222) {
       $(window).off('keydown.two')
       $('#bar-player-2').stop();
-      p2.addScore(($('#bar-player-2').height()) * 10);
+      p2.addScore(($('#bar-player-2').height()) * 100);
       checkLine(p2);
       p2.storeScore();
     }
@@ -97,9 +97,7 @@ function checkLine (player) {
   $(box).addClass(animation);
   if ($(bar).height() > line) {
     boardBreaker(player);
-    console.log(`Score before is ${player.score}`);
     player.addScore(game.matBonus());
-    console.log(`Score after is ${player.score}`);
   }
   if (strikeCount === 2) {
     window.clearInterval(interval);
@@ -132,9 +130,17 @@ function handlerTwo(event) {
 
 function checkWin() {
   if (p1.score > p2.score) {
-    $('h1').text('Player One Wins!')
+    $('#hero-player-1').stop();
+    $('#hero-player-1').removeClass('onechop');
+    setTimeout(function() {
+      $('h1').text('Player One Wins!')
+    },1000);
   } else if (p1.score < p2.score) {
-    $('h1').text('Player Two Wins!')
+    $('#hero-player-2').stop();
+    $('#hero-player-2').removeClass('twochop');
+    setTimeout(function() {
+      $('h1').text('Player One Wins!')
+    },1000)
   } else {
     $('h1').text(`It's a draw!`)
   }
@@ -199,25 +205,39 @@ function GameState(cachedLevel) {
     if (this.level !== 5) {
       this.level++;
       localStorage.setItem('level',this.level);
+      setTimeout(function() {
+        $('#p1-h4').html(`Total: <span class="h1-blink">${p1.score}<span>`);
+        $('#p2-h4').html(`Total: <span class="h1-blink">${p2.score}<span>`);
+        // $('h4').each(function() {
+        //   $(this).addClass('h1-blink');
+        // })
+      }, 1500);
       setTimeout(function(){
         $('#begin').get(0).pause();
         $('#end').prop('volume',0.5);
         $('#end').get(0).play();
-      }, 2000)
+      }, 3000)
       setTimeout(function() {
         $('#shade').addClass('fade');
-      },7000)
+      },8000)
       setTimeout(function() {
         window.location.reload(true);
       }, 8500);
+
+
+
     } else if (this.level === 5) {
+      setTimeout(function() {
+        $('#p1-h4').html(`Total: <span class="h1-blink">${p1.score}<span>`);
+        $('#p2-h4').html(`Total: <span class="h1-blink">${p2.score}<span>`);
+      }, 4000)
       setTimeout(function () {
         checkWin();
         $('h1').addClass('h1-blink')
-      }, 4000)
+      }, 5000)
       setTimeout(function () {
         $('#victory').get(0).play();
-      }, 6000)
+      }, 8000)
     }
   }
   this.matName = function() {
@@ -225,7 +245,7 @@ function GameState(cachedLevel) {
     return mats[(this.level) - 1];
   }
   this.matBonus = function () {
-    let bonus = [400, 800, 1200, 2000, 3000]
+    let bonus = [4000, 8000, 12000, 20000, 30000]
     return bonus[(this.level) - 1];
   }
 }
