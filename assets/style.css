@@ -184,12 +184,12 @@ span {
 
 #inst-float-left {
   float: left;
-  margin: 40px 20px 0px 80px;
+  margin: 20px 20px 0px 80px;
 }
 
 #inst-float-right {
   float: right;
-  margin: 40px 80px 0px 20px;
+  margin: 20px 80px 0px 20px;
 }
 
 .instruction-p {

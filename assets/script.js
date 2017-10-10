@@ -46,7 +46,7 @@ function keyStart () {
     if (e.which === 88) {
       $(window).off('keydown.one');
       $('#bar-player-1').stop();
-      p1.addScore($('#bar-player-1').height());
+      p1.addScore(($('#bar-player-1').height()) * 10);
       checkLine(p1);
       p1.storeScore();
     }
@@ -55,7 +55,7 @@ function keyStart () {
     if (e.which === 222) {
       $(window).off('keydown.two')
       $('#bar-player-2').stop();
-      p2.addScore($('#bar-player-2').height());
+      p2.addScore(($('#bar-player-2').height()) * 10);
       checkLine(p2);
       p2.storeScore();
     }
@@ -97,6 +97,9 @@ function checkLine (player) {
   $(box).addClass(animation);
   if ($(bar).height() > line) {
     boardBreaker(player);
+    console.log(`Score before is ${player.score}`);
+    player.addScore(game.matBonus());
+    console.log(`Score after is ${player.score}`);
   }
   if (strikeCount === 2) {
     window.clearInterval(interval);
@@ -151,10 +154,15 @@ function boardBreaker(player) {
 // Text setter function
 
 function setText() {
-  let header = $('h3');
-  header.each(function(){
+  let header3 = $('h3');
+  let header4 = $('h4');
+  header3.each(function(){
     $(this).text(game.matName());
   })
+  header4.each(function(){
+    $(this).text('break bonus: ' + game.matBonus());
+  })
+
 }
 
 // Mat field setter function
@@ -214,8 +222,11 @@ function GameState(cachedLevel) {
   }
   this.matName = function() {
     let mats = ['wood','stone','steel','ruby','diamond'];
-    let bonus = [40, 80, 120, 200, 300];
     return mats[(this.level) - 1];
+  }
+  this.matBonus = function () {
+    let bonus = [400, 800, 1200, 2000, 3000]
+    return bonus[(this.level) - 1];
   }
 }
 
