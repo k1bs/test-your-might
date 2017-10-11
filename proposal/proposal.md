@@ -52,14 +52,14 @@ Alex Kibler / Oct 6, 2017
 
 - ~~Visual interaction if line is reached. (breaking the board)~~ Achieved 10/8/2017
 - ~~Line to make is increased every level.~~ Achieved 10/8/2017
-- Score is stored til next round.
-- Generate new level.
+- ~~Score is stored til next round.~~ Achieved 10/9/2017
+- ~~Generate new level.~~ Achieved 10/9/2017
 
 #### Phase 0
 
-- Instructions screen
-- Visual styling
-- Players scores after five levels are compared
+- ~~Instructions screen~~ Achieved 10/10/2017
+- ~~Visual styling~~ Achieved 10/10/2017
+- ~~Players scores after five levels are compared~~ Achieved 10/10/2017
 
 #### Phase 1
 
