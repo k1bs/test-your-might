@@ -139,7 +139,7 @@ function checkWin() {
     $('#hero-player-2').stop();
     $('#hero-player-2').removeClass('twochop');
     setTimeout(function() {
-      $('h1').text('Player One Wins!')
+      $('h1').text('Player Two Wins!')
     },1000)
   } else {
     $('h1').text(`It's a draw!`)
