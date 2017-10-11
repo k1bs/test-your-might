@@ -222,7 +222,7 @@ function GameState(cachedLevel) {
       },8000)
       setTimeout(function() {
         window.location.reload(true);
-      }, 8500);
+      }, 9200);
 
 
 
@@ -233,8 +233,10 @@ function GameState(cachedLevel) {
       }, 4000)
       setTimeout(function () {
         checkWin();
-        $('h1').addClass('h1-blink')
       }, 5000)
+      setTimeout(function () {
+        $('h1').addClass('h1-blink')
+      }, 6000)
       setTimeout(function () {
         $('#victory').get(0).play();
       }, 8000)
