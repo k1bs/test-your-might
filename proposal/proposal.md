@@ -63,7 +63,7 @@ Alex Kibler / Oct 6, 2017
 
 #### Phase 1
 
-- Taka and John Master added as sprites
+- ~~Taka and John Master added as sprites~~ Achieved 10/11/2017
 - High scores table
 
 #### Phase 2
