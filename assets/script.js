@@ -131,13 +131,13 @@ function handlerTwo(event) {
 function checkWin() {
   if (p1.score > p2.score) {
     $('#hero-player-1').stop();
-    $('#hero-player-1').removeClass('onechop');
+    $('#hero-player-1').removeClass('onechop onebreathe');
     setTimeout(function() {
       $('h1').text('Player One Wins!')
     },1000);
   } else if (p1.score < p2.score) {
     $('#hero-player-2').stop();
-    $('#hero-player-2').removeClass('twochop');
+    $('#hero-player-2').removeClass('twochop twobreathe');
     setTimeout(function() {
       $('h1').text('Player Two Wins!')
     },1000)

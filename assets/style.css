@@ -129,11 +129,11 @@ span {
 }
 
 .onebreathe {
-  animation: breatheOne 0.5s steps(1) infinite alternate;
+  animation: breatheOne 0.4s steps(1) infinite alternate;
 }
 
 .twobreathe {
-  animation: breatheTwo 0.4s steps(1) infinite alternate;
+  animation: breatheTwo 0.48s steps(1) infinite alternate;
 }
 
 .onechop {
