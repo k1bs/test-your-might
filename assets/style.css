@@ -260,13 +260,13 @@ span {
 }
 
 #side-left {
-  background-image: url('../images/scorpionside.png');
+  background-image: url('../images/johnside.png');
   float: left;
   animation: slide 2s linear infinite;
 }
 
 #side-right {
-  background-image: url('../images/raidenside.png');
+  background-image: url('../images/takaside.png');
   margin-top: 0px;
   float: right;
   animation: slide 2s linear infinite;
