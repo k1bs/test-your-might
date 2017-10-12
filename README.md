@@ -1,6 +1,6 @@
 # Test Your Might
 
-![Test Your Might Original](../images/readmehero.png)
+![Test Your Might Original](images/readmehero.png)
 
 ## What is Test Your Might?
 
