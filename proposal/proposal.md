@@ -11,8 +11,8 @@ Alex Kibler / Oct 6, 2017
 
 ## Wireframe
 
-![Wireframe 1](wireframe1.png)
-![Wireframe 2](../assets/wireframe2.png)
+![Wireframe 1](proposal/wireframe1.png)
+![Wireframe 2](proposal/wireframe2.png)
 
 | Element | Aspects |
 | --- | --- |
