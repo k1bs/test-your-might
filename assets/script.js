@@ -269,15 +269,6 @@ Player.prototype.addScore = function(newScore) {
   this.score = Math.floor(this.score + newScore);
 }
 
-// EmptyBar Constructor function
-
-function EmptyBar(level) {
-  this.level = level;
-  this.barHeight = function () {
-    // Math for bar height by level. (look up ease functions?)
-  }
-}
-
 // Timer decrement function
 
 function timer() {
