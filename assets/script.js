@@ -68,11 +68,11 @@ function keyStart () {
   })
   $('#reset-button').click(function() {
     $('#shade').addClass('fade')
+    localStorage.removeItem('level');
+    localStorage.removeItem('1-score');
+    localStorage.removeItem('2-score');
     setTimeout(function(){
       window.location.reload(true);
-      localStorage.removeItem('level');
-      localStorage.removeItem('1-score');
-      localStorage.removeItem('2-score');
     }, 1500);
   })
 }
@@ -150,6 +150,7 @@ function checkWin() {
 
 function boardBreaker(player) {
   let board = `#mat-player-${player.number}`;
+  console.log(game.level)
   let broken = `url(./images/${game.level}broken.png)`;
   let timer = window.setTimeout(function() {
     $(board).css('background-image', broken);
