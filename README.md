@@ -40,8 +40,8 @@ Player.prototype.storeScore = function() {
 
 ## The Making of Test Your Might
 
-![Wireframe 1](wireframe1.png)
-![Wireframe 2](../assets/wireframe2.png)
+![Wireframe 1](proposal/wireframe1.png)
+![Wireframe 2](proposal/wireframe2.png)
 
 <dl>
 <dt>Author</dt>
