@@ -148,7 +148,7 @@ function boardBreaker (player) {
   let board = `#mat-player-${player.number}`
   console.log(game.level)
   let broken = `url(./images/${game.level}broken.png)`
-  let timer = window.setTimeout(function () {
+  window.setTimeout(function () {
     $(board).css('background-image', broken)
     $('#crunch').get(0).play()
   }, 600)
