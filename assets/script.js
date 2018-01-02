@@ -36,7 +36,7 @@ $(function () {
   timer()
 })
 
-// Keylogger function
+// initialize keylogger for controls
 
 function keyStart () {
   $(window).on('keydown.one', window, handlerOne)
@@ -76,7 +76,7 @@ function keyStart () {
   })
 }
 
-// Line checker function
+// line checker and chop animation function
 
 function checkLine (player) {
   strikeCount++
@@ -124,7 +124,7 @@ function handlerTwo (event) {
   }
 }
 
-// Winner Check function
+// Final score / winner function
 
 function checkWin () {
   if (p1.score > p2.score) {
