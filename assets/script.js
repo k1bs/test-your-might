@@ -4,6 +4,8 @@ let p2 = new Player(2)
 let game = new GameState(1)
 let strikeCount = 0
 
+let interval
+
 let currentLevel = parseInt(localStorage.getItem('level'))
 let p1Score = parseInt(localStorage.getItem('1-score'))
 let p2Score = parseInt(localStorage.getItem('2-score'))
@@ -267,7 +269,6 @@ function timer () {
   interval = setInterval(newText, 1000)
   function newText () {
     let currentTime = parseInt($('h1').html())
-    let newTime = currentTime - 1
     if (currentTime === 5) {
       $('h1').addClass('h1-blink')
     }
